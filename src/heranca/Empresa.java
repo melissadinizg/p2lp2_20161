@@ -9,9 +9,7 @@ public class Empresa {
 		zezinho.setHorasTrabalhadas(10);
 		zezinho.setPrecoPorHora(10);
 		System.out.println(zezinho.calculaPagamento());
-		
-		Funcionario f = new Funcionario("margarida", "567", 3);
-		f.calculaPagamento();
+		System.out.println(huguinho.toString());
 		
 	}
 

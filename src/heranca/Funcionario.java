@@ -11,7 +11,7 @@ public abstract class Funcionario {
 	}
 	
 	private void mudaNome(String novoNome){
-		this.nome = novoNome;//fazer tratamento de erros com exceções
+		this.nome = novoNome;//fazer tratamento de erros com exceções, por exemplo
 	}
 	
 	public String getNome() {
