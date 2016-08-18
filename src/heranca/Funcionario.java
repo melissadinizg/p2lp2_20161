@@ -1,13 +1,18 @@
 package heranca;
 
-public abstract class Funcionario {
-	private String nome, cpf;
+public abstract class Funcionario implements Pagavel{
+	private String cpf;
 	private int matricula;
+	protected String nome;
 	
 	public Funcionario(String nome, String cpf, int matricula){
 		mudaNome(nome);
 		this.cpf = cpf;
 		this.matricula = matricula;
+	}
+	
+	public static String lema(){
+		return "Chegar sempre cedo!";
 	}
 	
 	private void mudaNome(String novoNome){
@@ -19,6 +24,7 @@ public abstract class Funcionario {
 	}
 
 	public void setNome(String nome) {
+		System.out.println("Funcionario.setNome()");
 		mudaNome(nome);
 	}
 
@@ -33,8 +39,6 @@ public abstract class Funcionario {
 	public int getMatricula() {
 		return matricula;
 	}
-	
-	public double calculaPagamento(){return 0;}
 	
 	@Override
 	public String toString() {

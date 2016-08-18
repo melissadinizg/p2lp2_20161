@@ -11,6 +11,10 @@ public class Assalariado extends Funcionario{
 		this.qtdDependentes = 0;
 	}
 	
+	public static String lema(){//para exemplificar que nao existe polimorfismo com metodos estáticos
+		return "Trabalho em equipe!";
+	}
+	
 	public int getQtdDependentes() {
 		return qtdDependentes;
 	}
@@ -23,6 +27,10 @@ public class Assalariado extends Funcionario{
 		this.salarioBase = salarioBase;
 	}
 
+	public void setNome(String nome) {
+		System.out.println("Assalariado.setNome()");//para exemplificar chamada de metodo polimorfico no construtor
+		this.nome = nome;
+	}
 	@Override
 	public double calculaPagamento() {
 		return salarioBase + (qtdDependentes*ADICIONAL_POR_DEPENDENTE);

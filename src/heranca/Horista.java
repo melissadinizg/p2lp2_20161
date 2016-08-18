@@ -9,6 +9,10 @@ public class Horista extends Funcionario{
 		horasTrabalhadas = 0;
 	}
 
+	public static String lema(){
+		return "Zelar pelo patrimônio!";
+	}
+	
 	public int getHorasTrabalhadas() {
 		return horasTrabalhadas;
 	}
@@ -25,6 +29,12 @@ public class Horista extends Funcionario{
 		this.precoPorHora = precoPorHora;
 	}
 
+	@Override
+	public void setNome(String nome) {
+		System.out.println("Horista.setNome()");
+		this.nome = nome;
+	}
+	
 	@Override
 	public double calculaPagamento() {
 		return horasTrabalhadas * precoPorHora;
