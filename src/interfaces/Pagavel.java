@@ -1,4 +1,4 @@
-package heranca;
+package interfaces;
 
 public interface Pagavel {
 	public double calculaPagamento();

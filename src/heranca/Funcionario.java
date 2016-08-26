@@ -1,5 +1,7 @@
 package heranca;
 
+import interfaces.Pagavel;
+
 public abstract class Funcionario implements Pagavel{
 	private String cpf;
 	private int matricula;

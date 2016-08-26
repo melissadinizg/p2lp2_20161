@@ -2,6 +2,8 @@ package heranca;
 
 import java.util.ArrayList;
 
+import interfaces.Pagavel;
+
 public class GerenteFinanceiro {
 	private ArrayList<Pagavel> contas = new ArrayList<>();
 	

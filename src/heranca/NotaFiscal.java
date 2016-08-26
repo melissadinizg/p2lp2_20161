@@ -2,6 +2,8 @@ package heranca;
 
 import java.util.ArrayList;
 
+import interfaces.Pagavel;
+
 public class NotaFiscal implements Pagavel{
 	private String nome;
 	private ArrayList<Item> itens;
