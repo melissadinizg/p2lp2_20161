@@ -7,6 +7,8 @@ public class Main {
 		e.adicionaPrato(e.criaPratoCircular(10, Personalizacao.ESTAMPA, 2));
 		e.adicionaPrato(e.criaPratoCircular(5, Personalizacao.ESTAMPA, 2));
 		imprimePratos(e.getPratosOrdenados());
+		ComparadorPersonalizacao comparador = new ComparadorPersonalizacao();
+		imprimePratos(e.getPratosOrdenados(comparador));
 	}
 
 	private static void imprimePratos(List<PratoPersonalizado> lista) {

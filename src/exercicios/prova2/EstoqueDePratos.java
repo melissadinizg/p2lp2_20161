@@ -65,4 +65,9 @@ public class EstoqueDePratos {
 		Collections.sort(pratos);
 		return pratos;
 	}
+	
+	public List<PratoPersonalizado> getPratosOrdenados(Comparator<PratoPersonalizado> comparador){
+		Collections.sort(pratos, comparador);
+		return pratos;
+	}
 }

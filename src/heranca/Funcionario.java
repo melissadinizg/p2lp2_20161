@@ -2,7 +2,7 @@ package heranca;
 
 import interfaces.Pagavel;
 
-public abstract class Funcionario implements Pagavel{
+public abstract class Funcionario implements Pagavel, Comparable<Funcionario>{
 	private String cpf;
 	private int matricula;
 	protected String nome;
@@ -54,5 +54,18 @@ public abstract class Funcionario implements Pagavel{
 		}
 		Funcionario f = (Funcionario) arg0;
 		return getCpf().equals(f.getCpf());
+	}
+	
+	@Override
+	public int compareTo(Funcionario obj) {
+		if(calculaPagamento() > obj.calculaPagamento()){
+			return 1;
+		}else if(calculaPagamento() < obj.calculaPagamento()){
+			return -1;
+		}else{
+			return 0;
+		}
+		
+		// Curta: return (int) ((calculaPagamento() - obj.calculaPagamento())*100);
 	}
 }

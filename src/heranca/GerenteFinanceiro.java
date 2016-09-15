@@ -1,5 +1,6 @@
 package heranca;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import interfaces.Pagavel;
@@ -22,11 +23,12 @@ public class GerenteFinanceiro {
 		return total;
 	}
 	
-	public void geraFolhaPagamento(){
+	public void geraFolhaPagamento() throws IOException{
 		for (Pagavel conta : contas) {
 			//getNome() chamada polimorfica
 			//calculaPagamento chamada polimorfica
-			System.out.println(conta.getNome() + " " + conta.calculaPagamento());
+			String folhaPagamento = conta.getNome() + " " + conta.calculaPagamento();
+			System.out.println(folhaPagamento);
 		}
 	}
 	
@@ -49,7 +51,12 @@ public class GerenteFinanceiro {
 		//--------------
 		System.out.println(zezinho.lema());
 		System.out.println(huguinho.lema());
-		p2t1sa.geraFolhaPagamento();
+		try{
+			p2t1sa.geraFolhaPagamento();
+		}catch(IOException e){
+			System.out.println(e.getMessage());
+		}
+		
 		
 	}
 
