@@ -1,8 +1,14 @@
 package heranca;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
+import arquivos.GerenteArquivo;
 import interfaces.Pagavel;
 
 public class GerenteFinanceiro {
@@ -24,14 +30,16 @@ public class GerenteFinanceiro {
 	}
 	
 	public void geraFolhaPagamento() throws IOException{
+		String resultado = "";
 		for (Pagavel conta : contas) {
 			//getNome() chamada polimorfica
 			//calculaPagamento chamada polimorfica
 			String folhaPagamento = conta.getNome() + " " + conta.calculaPagamento();
-			System.out.println(folhaPagamento);
+			resultado += folhaPagamento + "\n";
 		}
+		GerenteArquivo.salvar(resultado);
 	}
-	
+
 	public static void main(String[] args) {
 		GerenteFinanceiro p2t1sa = new GerenteFinanceiro();
 		Horista zezinho = new Horista("Zezinho da Disney", "123", 1);
@@ -51,6 +59,18 @@ public class GerenteFinanceiro {
 		//--------------
 		System.out.println(zezinho.lema());
 		System.out.println(huguinho.lema());
+		
+		//mostra uma folha de pagamento salva em arquivo
+		String nomeArquivo = "2016-09-16";
+		System.out.println("\n\nFolha de Pagamento " + nomeArquivo);
+		try{
+			System.out.println(GerenteArquivo.ler(nomeArquivo));
+		}catch(IOException e){
+			System.out.println(e.getMessage());
+		}
+		
+		
+		//salva a folha de pagamento em arquivo
 		try{
 			p2t1sa.geraFolhaPagamento();
 		}catch(IOException e){

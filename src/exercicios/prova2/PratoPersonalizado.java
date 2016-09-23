@@ -1,6 +1,12 @@
 package exercicios.prova2;
 
-public abstract class PratoPersonalizado implements Comparable<PratoPersonalizado>{
+import java.io.Serializable;
+
+public abstract class PratoPersonalizado implements Comparable<PratoPersonalizado>, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private double preco;
 	private Personalizacao personalizacao;
 	

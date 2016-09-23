@@ -13,11 +13,12 @@ import java.util.*;
 public class UsaArquivo {
 	public static void main(String[] args) {
 		try{
-			copyBytes();
+			//copyBytes();
 			//copyBytes2();
-			//escreveObjeto();
+			escreveObjeto();
 			//leObjetos();
 			//escreveArquivoTexto("livia.txt");
+			//leArquivoTexto("livia.txt");
 		}catch(IOException e){
 			System.out.println(e.getMessage());
 		}
